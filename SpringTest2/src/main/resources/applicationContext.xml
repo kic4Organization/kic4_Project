@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:c="http://www.springframework.org/schema/c"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.2.xsd">
+
+<!-- spring3 (2)p네임스페이스 사용해서 객체생성 -->
+<bean id="monitor" class="spring3.SystemMonitor" p:periodTime="20" p:sender-ref="smsSender">
+
+<!-- 	(1) property태그로 setter 생성
+	<property name="periodTime">
+		<value>10</value>
+	</property>
+	<property name="sender">
+		<ref bean="smsSender"/>
+	</property>
+	 -->
+</bean>
+
+<!-- id값은 클래스명으로 불러오는데 첫글자는 소문자로 시작 -->
+<bean id="smsSender" class="spring3.SmsSender"/>
+
+<!-- spring4 (1)c네임스페이스 이용-->
+	<bean id="monitor2" class="spring4.SystemMonitor" c:periodTime="30" c:sender-ref="smsSender2">
+	
+<!-- (2)constructor-arg 태그를 이용해서 생성자 생성
+ 		<constructor-arg value="10"/>
+		<constructor-arg ref="smsSender2"/>
+		 -->
+		
+	</bean>
+
+	<bean id="smsSender2" class="spring4.SmsSender"/>
+
+<!-- spring5 (익명의 빈즈객체를 전달하는 방법) 네임스페이스를 혼용도 가능 
+					내부에서는 id가 필요X
+	: p네임스페이스 사용해서 객체생성
+-->
+	<bean id="monitor3" class="spring5.SystemMonitor" p:periodTime="50">
+		<property name="sender">
+			<!-- <ref bean="smsSender3"/> -->
+			<bean class="spring5.SmsSender">
+				<constructor-arg value="true"/>
+			</bean>
+		</property>
+	</bean>
+	
+<!--
+ 	<bean id="smsSender3" class="spring5.SmsSender">
+		<constructor-arg value="true"/>
+	</bean>
+	 -->
+
+<!-- spring6 
+			 id와 동일한 기능속성명->name
+			 List형의 객체를 가져올 때 사용하는 태그명 <list>태그로 묶어준다.
+-->
+	<bean name="performanceMonitor" class="spring6.PerformanceMonitor" scope="prototype">
+		<property name="number">
+			<list>
+				<value>0.2</value>
+				<value>0.3</value>
+			</list>
+		</property>
+	</bean>
+
+<!-- spring7 
+		setSubSet(Set자료형의 객체)을 생성하는 법
+-->
+	<bean name="customer" class="spring7.Customer">
+		<property name="subSet">
+			<set>
+				<value>1</value>
+				<value>4</value>
+			</set>
+		</property>
+	</bean>
+
+<!-- spring8
+		properties 자료형을 사용하는 멤버변수의 setter 경우 <props>태그로 묶어준다.
+		<prop key="키명">값</prop>
+		객체명.setProperty("server","192.168.0.21"); //java로 코딩한다면 이것을 xml에서는 아래처럼 코딩
+ -->
+	<bean name="bookClient" class="spring8.BookClient">
+		<property name="prop">
+			<props>
+				<prop key="server">192.168.0.21</prop>
+				<prop key="connectionTimeout">5000(5초)</prop>
+         		<prop key="Retry">3</prop>
+			</props>
+		</property>
+	</bean>
+	
+<!-- spring9  (Map<String,Object> map)-->
+	<bean name="protocolHanderFactory" class="spring9.ProtocolHanderFactory">
+	  <property name="map">
+	     <map>
+		     <entry>
+		           <key><value>soap</value></key>
+		           <ref bean="soapHandler" />
+		     </entry> 
+		     <entry>
+		           <key><value>rest</value></key>
+		           <ref bean="restHandler" />
+		     </entry>
+	     </map>
+	  </property>
+	</bean>
+	 
+	<bean name="soapHandler"  class="spring9.SoapHandler" />
+	<bean name="restHandler"  class="spring9.RestHandler" />
+
+</beans>
+
+
+
+
+

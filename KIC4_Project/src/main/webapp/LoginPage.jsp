@@ -2,7 +2,7 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <!DOCTYPE html>
-<c:set var="memid" value="${sessionScope.idKey}"/>
+<c:set var="memid" value="${idKey}"/>
 <html lang="ko">
 <head>
   <meta charset="UTF-8">

@@ -7,7 +7,7 @@ import javax.servlet.http.HttpServletResponse;
 import member.RegisterDTO;
 import member.ZipcodeDTO;
 
-public class RegisterProcAction implements CommandAction
+public class U_RegisterProcAction implements CommandAction
 {
 	//요청한 명령어에 따른 페이지로 이동시켜주는 메서드
 	public String requestPro(HttpServletRequest request,
@@ -38,6 +38,6 @@ public class RegisterProcAction implements CommandAction
 	    zipDTO.setZipcode(request.getParameter("zipcode"));
 	    
 	    request.setAttribute("regDTO", regDTO);
-    return "/RegisterProc.jsp";
+    return "/U_RegisterProc.jsp";
 	}
 }

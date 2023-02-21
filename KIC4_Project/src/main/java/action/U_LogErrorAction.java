@@ -3,12 +3,12 @@ package action;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class RegisterAction implements CommandAction {
+public class U_LogErrorAction implements CommandAction {
 
 	@Override
 	public String requestPro(HttpServletRequest request, HttpServletResponse response) throws Throwable {
 		// TODO Auto-generated method stub
-		return "/Register.jsp";
+		return "/U_LogError.jsp";
 	}
 
 }

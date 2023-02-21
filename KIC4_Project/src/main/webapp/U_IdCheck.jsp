@@ -2,7 +2,7 @@
 <jsp:useBean id="memMgr"
              class="member.MemberDBMgr"/>
 <%
-   //scrip.js->mem_id값을 받아서 처리
+   //scrip.js->memid값을 받아서 처리
    String memid = request.getParameter("memid");
    System.out.println("memid="+memid);
    

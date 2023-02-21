@@ -19,9 +19,9 @@
  <c:if test="${!empty memid}"> <!-- 수정할 예정 -->
 	 <b><c:out value="${memid}"/></b>님 환영합니다.<p>
 	 		제한된 기능을 사용할 수 가 있습니다.<p>
-	<a href="MemberUpdate.jsp">회원수정</a>
-	<a href="DelCheckForm.jsp?memid=${memid}">회원탈퇴</a>
-	<a href="Logout.jsp">로그아웃</a>
+	<a href="U_MemberUpdate.shop">회원수정</a>
+	<a href="U_DelCheckForm.shop?memid=${memid}">회원탈퇴</a>
+	<a href="U_Logout.shop">로그아웃</a>
 </c:if>
 
 <!-- 로그인 안된 상태 -->
@@ -38,10 +38,10 @@
             href="javascript:void(0)"
             class="mx-auto inline-block max-w-[160px]"
           >
-            <img src="../kic/img/lo.png"/>
+            <img src="./img/logo.png"/>
           </a>
           </div>
-          <form name="login" method="post" action="LoginPageProc.shop">
+          <form name="login" method="post" action="U_LoginPageProc.shop">
             <div class="mb-5">
               <input
                 type="text"
@@ -72,7 +72,7 @@
                 href="javascript:void(0)"
                 class="flex h-11 items-center hover:opacity-80"
               >
-                <img src="../kic/img/kakao_login.png"/>
+                <img src="./kic/img/kakao_login.png"/>
               </a>
             </li>
             <li class="w-full px-2 py-1">
@@ -80,7 +80,7 @@
                 href="javascript:void(0)"
                 class="flex h-11 items-center hover:opacity-90"
               >
-              <img src="../kic/img/naver_login.png"/>
+              <img src="./kic/img/naver_login.png"/>
               </a>
             </li>            
           </ul>

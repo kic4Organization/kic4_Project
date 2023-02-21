@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>회원 동의 약관(agreement.jsp)</title>
+<title>회원 동의 약관(U_agreement.jsp)</title>
 </head>
 <body>
 <center>
@@ -98,7 +98,7 @@
  요금 등 서비스 이용으로 발생한 분쟁에 대해 소송이 제기될 경우 회사의 본사 소재지 법원을 관할법원으로 합니다.
 				
 	</textarea><p>
-	<input type="button" value="동의합니다." onclick="document.location='Register.jsp'">
+	<input type="button" value="동의합니다." onclick="document.location='U_Register.shop'">
 	<input type="button" value="동의하지 않습니다." onclick="history.back()">
 </center>
 </body>

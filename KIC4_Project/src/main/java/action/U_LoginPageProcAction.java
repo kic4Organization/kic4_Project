@@ -3,7 +3,7 @@ package action;
 import javax.servlet.http.*;
 import member.MemberDBMgr;
 
-public class LoginPageProcAction implements CommandAction {
+public class U_LoginPageProcAction implements CommandAction {
 
 	//@Override
 	public String requestPro(HttpServletRequest request, HttpServletResponse response) throws Throwable {
@@ -19,7 +19,7 @@ public class LoginPageProcAction implements CommandAction {
 		request.setAttribute("loginCheck", new Boolean(loginCheck)); 
 		request.setAttribute("memid", new String(memid));
 		
-		return "/LoginPageProc.jsp";
+		return "/U_LoginPageProc.jsp";
 	}
 
 }

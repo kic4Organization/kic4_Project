@@ -13,7 +13,7 @@
   <tr> 
     <td align="center" valign="middle" bgcolor="#FFFFCC"> 
       <table border="1" cellspacing="0" cellpadding="2"  align="center">
-        <form name="regForm" method="post" action="RegisterProc.shop">
+        <form name="regForm" method="post" action="U_RegisterProc.shop">
           <tr align="center" bgcolor="#996600"> 
             <td colspan="3"><font color="#FFFFFF"><b>회원 가입</b></font></td>
           </tr>

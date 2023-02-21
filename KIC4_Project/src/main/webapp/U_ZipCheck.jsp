@@ -43,7 +43,7 @@ int totalList = zipcodeList.size();//검색갯수
 <center>
 <b>우편번호 찾기</b>
 <table>
-   <form name="zipForm" action="ZipCheck.jsp" method="post">
+   <form name="zipForm" action="U_ZipCheck.shop" method="post">
        <tr>
            <td><br>
            동이름 입력:<input name="area3" type="text">

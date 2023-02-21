@@ -6,10 +6,10 @@
     <c:when test="${loginCheck==true}">
     <c:set var="idKey" value="${requestScope.memid}" scope="session"/>
     <meta http-equiv="Refresh" 
-             content="0;url=/KIC4_Project/LoginPage.shop">
+             content="0;url=/KIC4_Project/U_LoginPage.shop">
 	</c:when>
 	<c:otherwise>
 	<meta http-equiv="Refresh" 
-             content="0;url=/KIC4_Project/LogError.shop">
+             content="0;url=/KIC4_Project/U_LogError.shop">
 	</c:otherwise>
   </c:choose>

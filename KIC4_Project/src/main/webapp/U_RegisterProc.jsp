@@ -13,7 +13,7 @@
   <tr> 
     <td align="center" valign="middle" bgcolor="#FFFFCC"> 
 	<table border="1" cellspacing="0" cellpadding="2"  align="center">
-        <form name="regForm" method="post" action="MemberInsert.shop">
+        <form name="regForm" method="post" action="U_MemberInsert.shop">
           <tr align="center" bgcolor="#996600"> 
             <td colspan="3"><font color="#FFFFFF"><b> 
               <c:out value="${regBean.memname}"/>

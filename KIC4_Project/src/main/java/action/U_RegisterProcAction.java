@@ -1,5 +1,7 @@
 package action;
 
+import java.sql.Timestamp;
+
 //추가->web상에 import
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -20,22 +22,19 @@ public class U_RegisterProcAction implements CommandAction
 		 //빈즈객체를 생성 ->확인용 
 	    RegisterDTO regDTO = new RegisterDTO();
 	    System.out.println("regDTO="+regDTO);
-	    ZipcodeDTO zipDTO= new ZipcodeDTO();
-	    System.out.println("zipDTO="+zipDTO);
 	    
 	    regDTO.setMemid(request.getParameter("memid"));
 	    regDTO.setGrade(request.getParameter("grade"));
 	    regDTO.setMemname(request.getParameter("memname"));
 	    regDTO.setBirthday(request.getParameter("birthday"));
 	    regDTO.setEmail(request.getParameter("email"));
-	    regDTO.setMphone(request.getParameter("mphone"));
+	    regDTO.setMphone(Integer.parseInt(request.getParameter("mphone")));
 	    regDTO.setNickname(request.getParameter("nickname"));
-	    regDTO.setEnrolldate(request.getParameter("enrolldate"));
-	    regDTO.setDeletedate(request.getParameter("deletedate"));
+	    regDTO.setEnrolldate(new Timestamp(System.currentTimeMillis()));
 	    regDTO.setDelflag(request.getParameter("delflag"));
 	    regDTO.setPwd(request.getParameter("pwd"));
 	    regDTO.setAddr(request.getParameter("addr"));
-	    zipDTO.setZipcode(request.getParameter("zipcode"));
+	    regDTO.setZipcode(request.getParameter("zipcode"));
 	    
 	    request.setAttribute("regDTO", regDTO);
     return "/U_RegisterProc.jsp";

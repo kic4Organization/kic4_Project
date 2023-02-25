@@ -4,8 +4,8 @@
 <html>
 <head>
 <title>회원가입</title>
-<!-- <link href="style.css" rel="stylesheet" type="text/css"> -->
-<script language="JavaScript" src="script.js"></script>
+<link href="style.css" rel="stylesheet" type="text/css">
+<script language="JavaScript" src="script.js?ver=2.0"></script>
 </head>
 <body bgcolor="#996600" onLoad="regForm.memid.focus()">
 <br><br>

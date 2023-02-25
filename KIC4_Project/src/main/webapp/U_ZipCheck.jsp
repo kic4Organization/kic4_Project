@@ -1,6 +1,6 @@
 <%@page contentType="text/html;charset=utf-8"%>
 <%@page import="java.util.*,member.*"%>
-<jsp:useBean id="memMgr" class="member.MemberDBMgr"/>
+<jsp:useBean id="memDAO" class="member.MemberDAO"/>
 
 <%//검색전->check=y , 검색후->check=n
   //Register.jsp->script.js->check,area3
@@ -8,9 +8,10 @@
 
 String check=request.getParameter("check");//y
 String area3=request.getParameter("area3");
+System.out.println("check => "+check+", area3 => "+area3);
 
 //검색된 데이터를 화면에 출력
-Vector zipcodeList = memMgr.zipcodeRead(area3);
+Vector zipcodeList = memDAO.zipcodeRead(area3);
 int totalList = zipcodeList.size();//검색갯수
 %>
 
@@ -19,7 +20,7 @@ int totalList = zipcodeList.size();//검색갯수
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>우편번호 검색 </title>
 <link href="style.css" rel="stylesheet" type="text/css">
-<script language="JavaScript" src="script.js"></script>
+<script language="JavaScript" src="script.js?ver=4.0"></script>
 <script>
 
    function dongCheck(){
@@ -28,11 +29,11 @@ int totalList = zipcodeList.size();//검색갯수
                 document.zipForm.area3.focus();
                    return;
                    }
-       document.zipForm.submit();//ZipCheck.jsp  
+       document.zipForm.submit();//U_ZipCheck.jsp  
    }
  
   function sendAddress(zipcode,area1,area2,area3,area4){
- var address=area1+" "+area2+" "+area3+" "+area4;
+ var addr=area1+" "+area2+" "+area3+" "+area4;
   opener.document.regForm.zipcode.value=zipcode;
   opener.document.regForm.addr.value=addr;
    self.close();
@@ -43,7 +44,7 @@ int totalList = zipcodeList.size();//검색갯수
 <center>
 <b>우편번호 찾기</b>
 <table>
-   <form name="zipForm" action="U_ZipCheck.shop" method="post">
+   <form name="zipForm" action="U_ZipCheck.jsp" method="post">
        <tr>
            <td><br>
            동이름 입력:<input name="area3" type="text">

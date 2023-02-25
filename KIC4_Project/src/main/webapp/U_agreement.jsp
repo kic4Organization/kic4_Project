@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>회원 동의 약관(U_agreement.jsp)</title>
+<title>회원 동의 약관</title>
 </head>
 <body>
 <center>

@@ -3,7 +3,7 @@ package action;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import member.MemberDBMgr;
+import member.MemberDAO;
 
 public class U_LoginPageProcAction implements CommandAction {
 
@@ -15,7 +15,7 @@ public class U_LoginPageProcAction implements CommandAction {
 				
 				System.out.println("memid=>"+memid);
 				System.out.println("pwd=>"+pwd);//경로확인
-				MemberDBMgr memMgr = new MemberDBMgr();
+				MemberDAO memMgr = new MemberDAO();
 				boolean loginCheck = memMgr.loginCheck(memid,pwd);
 				
 				request.setAttribute("loginCheck", new Boolean(loginCheck)); 

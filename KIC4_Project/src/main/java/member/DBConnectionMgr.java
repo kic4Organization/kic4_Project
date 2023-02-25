@@ -40,22 +40,19 @@ import java.util.Vector;
 public class DBConnectionMgr {
 
     //커넥션풀을 벡터로 구성
-	//private MemberDBMgr mem =null;
+	//private MemberDAO mem =null;
     private Vector connections = new Vector(10);
-//  (1) 멤버변수 선언
-  private String _driver,_url,_user,_password;
-  
     /*   MySQL
 	private String _driver = "org.gjt.mm.mysql.Driver",
     _url = "jdbc:mysql://127.0.0.1:3306/mydb?useUnicode=true&characterEncoding=EUC_KR",
     _user = "root",
     _password = "1234"; */
-    /* 
+
     private String _driver = "oracle.jdbc.driver.OracleDriver",
     _url = "jdbc:oracle:thin:@localhost:1521:orcl",
-    _user = "scott",
-    _password = "tiger";
-*/
+    _user = "kic4",
+    _password = "kic4";
+
     private boolean _traceOn = false;
     private boolean initialized = false;
 	
@@ -65,22 +62,7 @@ public class DBConnectionMgr {
     //커넥션풀객체를 선언
     private static DBConnectionMgr instance = null;
 
- // (2)dbmysql.properties파일을 읽어들여서 키 -> 값을 불러오기
-    public DBConnectionMgr() throws IOException {
-    	Properties props =new Properties();
-    	FileInputStream in = new FileInputStream
-    			("C:/webtest/Jsp/sou/KIC4_Project/src/main/webapp/db/dboracle.properties");
-    	props.load(in);//파일의 내용을 메모리에 불러오기
-    	in.close();
-    	_driver=props.getProperty("jdbc.drivers");
-    //드라이브만 시스템에 반영
-    	if(_driver!=null) System.setProperty("jdbc.drivers", _driver);//등록
-//    --------------------------------------------------------------------------
-    	_url=props.getProperty("jdbc.url");
-    	_user=props.getProperty("jdbc.username");
-    	_password=props.getProperty("jdbc.password");
-    	System.out.println("_driver=>"+(_driver)+", _url => "+(_url));
-    	System.out.println("_user=>"+(_user)+", _password => "+(_password));
+    public DBConnectionMgr(){
     }  
 
     /** Use this method to set the maximum number of open connections before

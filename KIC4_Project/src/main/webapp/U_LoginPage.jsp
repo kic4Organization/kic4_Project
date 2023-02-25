@@ -2,7 +2,7 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <!DOCTYPE html>
-<c:set var="memid" value="${idKey}"/>
+<c:set var="memid" value="${sessionScope.idKey}"/>
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
@@ -11,7 +11,7 @@
   <title>로그인페이지</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
-  <script language="JavaScript" src="script.js"></script>
+  <script language="JavaScript" src="script.js?ver=2.0"></script>
 </head>
 <body>
   <!-- ====== Forms Section Start ====== -->
